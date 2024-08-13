@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Product Card</title>
+
+    <style>
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body
+      {
+        background-image: url("https://i.pinimg.com/originals/4c/52/97/4c5297b1a347d051533c39e3f630a274.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 900px 630px;
+        backdrop-filter: blur(3px);  
+
+      }
+      
+      .card1 {
+       
+        border:3px solid rgba(0, 0, 0, 0.029);
+        margin: 50px auto;
+        background-color: white;
+        height: 630px;
+        width: 360px;
+        border-radius: 25px;
+        box-shadow:rgba(193, 150, 232, 0.388) 0px 0px 0px 3px;
+        transition: all 300ms;
+        
+      }
+ 
+      .card1:hover
+      {
+        box-shadow: rgba(0, 0, 0, 0.57) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
+
+      .img1 
+      {
+        position: absolute;
+        top: 6%;
+        left: 41%;
+        height: 270px;
+        width: 270px;
+        border-radius: 50px;
+        border-top: 6px solid whitesmoke;  
+        
+      }
+      .img2 {
+        position: absolute;
+        top: 6%;
+        left: 41%;
+        height: 270px;
+        width: 270px;
+        border-radius: 50px;
+        border-top: 6px solid whitesmoke;  
+        
+      }
+      .img3 {
+        position: absolute;
+        top: 6%;
+        left: 41%;
+        height: 270px;
+        width: 270px;
+        border-radius: 50px;
+        border-top: 6px solid whitesmoke;  
+        
+      }
+      
+      input
+      {
+        display: none;
+      }
+
+      .color 
+      {
+        margin: 5px;
+        position: relative;
+        top: 50%;
+        left: 35%;
+        border-radius: 50px;
+
+      }
+      #black:checked + .img1 {
+        transition:all 100ms;
+        border-top: 6px solid #ABB2B9;
+       
+        z-index: 3;
+      }
+      #navy:checked + .img2 {
+         transition:all 100ms;
+        border-top: 6px solid #D4E6F1;
+        z-index: 3;
+      }
+      #red:checked + .img3 {
+       transition:all 100ms;
+        border-top: 6px solid #EAECEE;
+        z-index: 3;
+      }
+
+      .cart
+      {
+        margin-top: 5px;
+        border-radius: 25px;
+        padding: 10px;
+        position:fixed;
+        top:0%;
+        left:58%;
+        border: 2px solid transparent;
+      }
+      .cart:hover
+      {
+        border: 2px solid rgba(0, 0, 0, 0.797);
+        border-radius: 25px;
+        background-color:rgba(192, 192, 192, 0.096);
+        
+      }
+
+      .dec
+      {
+        position: relative;
+        top: 50%;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 630;
+        font-size: large;
+        margin-top: 10px;
+        margin: 20px;
+      }
+
+      .price
+      {
+        position: relative;
+        top:56%;
+        font-size: xx-large;
+        font-weight: 630;
+        text-align: center;
+      }
+
+      .btn
+      {
+        position: relative;
+        top: 42%;
+        color:yellow;
+        background-color:blueviolet;
+        font-weight: 900;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: x-large;
+        text-align: center;
+        border: 2px solid transparent;
+        border-radius: 50px;
+        margin-top: 100px; 
+        padding: 10px;
+        width: 90%; 
+       margin-left: 5%;
+     }
+
+      .btn:hover
+     {
+       transition-duration: 0.5s;
+       color:whitesmoke;
+       background-color:black;
+       border: 3px solid  yellow;
+     }
+.info
+{
+  position:fixed;
+  top:73%;  
+  left:40%;
+  font-size:large;
+  font-weight:600;  
+}
+.allsize
+{
+display:flex;
+padding:5px;
+justify-content:space-between;
+align-items:center;
+}
+.size
+{
+background-color:#D6EAF8;
+color:black;
+margin:3px;
+padding:6px;
+border-radius:6px;
+border-bottom:3px solid transparent;
+}
+.size:hover
+{
+transition:all 100ms;
+background-color:transparent;
+color:red;
+margin:3px;
+padding:6px;
+border-radius:6px;
+border-bottom:3px solid black;
+}
+    </style>
+  </head>
+
+  <body>
+   <div class="info">
+<div class="allsize">Available Size : 
+<div class="size">
+8
+</div>
+ <div class="size">
+9
+</div>
+<div class="size">
+10
+</div>
+<div class="size">
+11
+</div>
+<div class="size">
+12
+</div>
+</div>   
+
+<!--
+<label>Available Size</label>
+<select>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+
+</select> 
+Product details
+Material typeFaux Leather
+Closure typeLace-Up
+Heel typeFlat
+Sole materialFaux Leather, Rubber
+StyleModern
+Outer materialFaux Leather,Leather,Mesh,Rubber
+Country of OriginIndia -->
+   </div>
+
+    <div class="card1">
+      
+      <input type="radio" id="black" name="colors" />
+      <img
+        src="https://m.media-amazon.com/images/I/71Q0Bu0rHNL._SY695_.jpg"
+        class="img img1"
+      />
+      <input type="radio" id="navy" name="colors" />
+      <img
+        src="https://m.media-amazon.com/images/I/71QG6Ch04YL._SY695_.jpg"
+        class="img img2"
+      />
+      <input type="radio" id="red" name="colors" />
+      <img
+        src="https://m.media-amazon.com/images/I/71itH-yZP8L._SY695_.jpg"
+        class="img img3"
+      />
+
+      <label for="black"
+        ><span
+          class="material-symbols-outlined color"
+          style="color: black; background-color: black"
+        >
+          radio_button_unchecked
+        </span></label
+      >
+
+      <label for="navy"
+        ><span
+          class="material-symbols-outlined color"
+          style="color: navy; background-color: navy"
+        >
+          radio_button_unchecked
+        </span></label
+      >
+
+      <label for="red"
+        ><span
+          class="material-symbols-outlined color"
+          style="color: red; background-color: red"
+        >
+          radio_button_unchecked
+        </span></label
+      >
+      <span class="material-symbols-outlined cart" style="color: rgb(255, 115, 0); font-weight:900; font-size:23px;">
+        add_shopping_cart
+        </span>
+
+        <h2 class="dec">Vector <mark style="color: red; background-color: transparent;">X</mark> Ranger Badminton/Tennis Court Shoe for Men</h2>
+        <p class="dec">
+       <mark style="color:red; background-color:transparent; font-size:12px; font-weight:630;">4.5</mark>
+          <i class="fa-solid fa-star" style="color: gold; "></i>
+          <i class="fa-solid fa-star" style="color: gold; "></i>
+          <i class="fa-solid fa-star" style="color: gold; "></i>
+          <i class="fa-solid fa-star" style="color: gold; "></i>
+          <i class="fa-solid fa-star-half-stroke" style="color: gold;"></i>
+          
+          
+
+                            <h3 class="price"> &#8360; : 3,61,999/-</h3>
+                            <button class="btn">Buy Now</button>
+                            
+                           </p>
+    </div>
+ 
+  </body>
+</html>
